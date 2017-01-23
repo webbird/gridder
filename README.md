@@ -32,7 +32,34 @@ if you'd like to try this plugin, so I can help you.
     <script>
     $(function() {
         // Call Gridder
-        $('.gridder').Gridder();
+        $('ul.gridder').Gridder({
+            debug: false,
+            scroll: true,
+            showNav: true,
+            scrollOffset: 0,
+            rootUrl: "/",
+            animationSpeed: 'slow',
+            animationEasing: "easeInOutExpo",
+            expander: '.gridder-expander',
+            gridderContent: '<li class="gridder-show"></li>',
+            showNavTemplate: "<div class=\"gridder-navigation\">" +
+                             "<a href=\"#\" class=\"gridder-close\">{{closeText}}</a>" +
+                             "<a href=\"#\" class=\"gridder-nav prev\">{{prevText}}</a>" +
+                             "<a href=\"#\" class=\"gridder-nav next\">{{nextText}}</a>" +
+                             "</div>",
+            nextText: "Next",
+            prevText: "Previous",
+            closeText: "Close",
+            showTemplate: "<div class=\"gridder-show loading\"></div>",
+            outputTemplate: "{{shownav}}<div class=\"gridder-padding\">" +
+                            "<div class=\"gridder-expanded-content\">" +
+                            "{{thecontent}}" +
+                            "</div></div>",
+            onStart: function(){},
+            onShow: function(){},
+            onClose: function(){},
+            onFinish: function(){}	
+	});
     });
     </script>
     ```
